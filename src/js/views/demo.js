@@ -7,11 +7,18 @@ import "../../styles/demo.css";
 
 export const Demo = () => {
 	const { store, actions } = useContext(Context);
+	const { data, setData } = useState({
+		"full_name": "",
+		"email": "",
+		"phone": "",
+		"address": "",
+		"agenda_slug": "Gabriel"
+	})
 
 	return (
 		<div className="container">
-			<ul className="list-group">
-				{store.demo.map((item, index) => {
+			{/* <ul className="list-group">
+			{store.demo.map((item, index) => {
 					return (
 						<li
 							key={index}
@@ -33,7 +40,33 @@ export const Demo = () => {
 						</li>
 					);
 				})}
-			</ul>
+			</ul> */}
+			<div class="d-flex justify-content-center">
+				<h1>Add a new contact</h1>
+			</div>
+			<form>
+				<div class="mb-3">
+					<label class="form-label">Full Name</label>
+					<input type="text" class="form-control" placeholder="Full Name" />
+				</div>
+				<div class="mb-3">
+					<label class="form-label">Email</label>
+					<input type="email" class="form-control" placeholder="name@example.com" />
+				</div>
+				<div class="mb-3">
+					<label class="form-label">Phone Number</label>
+					<input type="text" class="form-control" placeholder="Enter Phone" />
+				</div>
+				<div class="mb-3">
+					<label class="form-label">Address</label>
+					<input type="text" class="form-control" placeholder="Enter Address" />
+				</div>
+				<div class="container">
+					<div class="row">
+						<button type="submit" class="btn btn-primary">Save</button>
+					</div>
+				</div>
+			</form>
 			<br />
 			<Link to="/">
 				<button className="btn btn-primary">Back home</button>
