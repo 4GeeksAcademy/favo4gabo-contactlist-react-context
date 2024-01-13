@@ -16,24 +16,25 @@ export const Home = () => {
 	// 	store.contact.map((index) => {
 	return (
 
-		<div className="text-center mt-5">
+		<div className="container">
 			{store.contact.map((contacto, index) => (
 
-				<div key={index} className="card mb-3 my-style">
-					<div className="row g-0">
-						<div className="col-md-6">
-							<img src={`https://picsum.photos/seed/${contacto.id}/200/200`} className=" rounded-circle" alt="..." />
-						</div>
-						<div className="col-md-6">
-							<div className="card-body">
-								<h5 className="card-title">Nombre {contacto.full_name}</h5>
-								<p className="card-text">Ubicacion {contacto.address}</p>
-								<p className="card-text">Telefono {contacto.phone}</p>
-								<p className="card-text">Email {contacto.email}</p>
-								<p className="card-text"><small className="text-muted">Last updated 3 mins ago</small></p>
+				<div key={index} className="card mb-5 my-style">
+					<div className="card-body">
+						<div class="d-flex bd-highlight mb-3">
+							<div class="p-2 bd-highlight">
+								<img src={`https://picsum.photos/seed/${contacto.id}/200/200`} className=" rounded-circle" alt="..." />
 							</div>
+							<div class="p-2 bd-highlight">
+								<h5 className="card-text"> {contacto.full_name} </h5>
+								<p className="card-text"> <i class="fas fa-map-marker-alt"></i> {contacto.address} </p>
+								<p className="card-text"> <i class="fas fa-phone"></i> {contacto.phone} </p>
+								<p className="card-text"> <i class="fas fa-envelope"></i> {contacto.email} </p>
+							</div>
+							<div class="ms-auto p-2 bd-highlight">Flex item</div>
 						</div>
 					</div>
+
 				</div>
 			))}
 

@@ -35,7 +35,9 @@ const getState = ({ getStore, getActions, setStore }) => {
 			},
 
 			createContact: (data) => {
+
 				console.log("Datos a enviar:", data);
+				
 				const actions = getActions();
 				const URL = "https://playground.4geeks.com/apis/fake/contact/";
 				const opt = {
@@ -45,6 +47,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 					},
 					body: JSON.stringify(data),
 				};
+
 				fetch(URL, opt)
 					.then((response) => {
 						console.log("Respuesta:", response);
