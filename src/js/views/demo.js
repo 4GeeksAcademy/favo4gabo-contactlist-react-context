@@ -8,7 +8,7 @@ import "../../styles/demo.css";
 export const Create = () => {
 
 	const { store, actions } = useContext(Context);
-	const { data, setData } = useState({
+	const [data, setData] = useState({
 		"full_name": "",
 		"email": "",
 		"phone": "",
@@ -35,6 +35,8 @@ export const Create = () => {
 				<div className="mb-3">
 					<label className="form-label">Full Name</label>
 					<input type="text" className="form-control" placeholder="Full Name" onChange={info} name="full_name" required value={data.full_name} />
+					{/* <label htmlFor="inputEmail4" className="form-label">Full Name</label>
+					<input type="text" className="form-control" id="inputFullName" name="full_name" required value={data.full_name} onChange={info} /> */}
 				</div>
 				<div className="mb-3">
 					<label className="form-label">Email</label>

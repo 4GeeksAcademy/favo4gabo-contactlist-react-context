@@ -21,17 +21,17 @@ export const Home = () => {
 
 				<div key={index} className="card mb-5 my-style">
 					<div className="card-body">
-						<div class="d-flex bd-highlight mb-3">
-							<div class="p-2 bd-highlight">
+						<div className="d-flex bd-highlight mb-3">
+							<div className="p-2 bd-highlight">
 								<img src={`https://picsum.photos/seed/${contacto.id}/200/200`} className=" rounded-circle" alt="..." />
 							</div>
-							<div class="p-2 bd-highlight">
+							<div className="p-2 bd-highlight">
 								<h5 className="card-text"> {contacto.full_name} </h5>
-								<p className="card-text"> <i class="fas fa-map-marker-alt"></i> {contacto.address} </p>
-								<p className="card-text"> <i class="fas fa-phone"></i> {contacto.phone} </p>
-								<p className="card-text"> <i class="fas fa-envelope"></i> {contacto.email} </p>
+								<p className="card-text"> <i className="fas fa-map-marker-alt"></i> {contacto.address} </p>
+								<p className="card-text"> <i className="fas fa-phone"></i> {contacto.phone} </p>
+								<p className="card-text"> <i className="fas fa-envelope"></i> {contacto.email} </p>
 							</div>
-							<div class="ms-auto p-2 bd-highlight">Flex item</div>
+							<div className="ms-auto p-2 bd-highlight">Flex item</div>
 						</div>
 					</div>
 
