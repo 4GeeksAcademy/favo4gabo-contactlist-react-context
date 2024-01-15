@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useContext } from "react";
+import React, { useState, useContext } from "react";
 import { Link } from "react-router-dom";
 
 import { Context } from "../store/appContext";
@@ -9,11 +9,11 @@ export const Create = () => {
 
 	const { store, actions } = useContext(Context);
 	const [data, setData] = useState({
-		"full_name": "",
-		"email": "",
-		"phone": "",
-		"address": "",
-		"agenda_slug": "Gabriel"
+		full_name: "",
+		email: "",
+		phone: "",
+		address: "",
+		agenda_slug: "Gabriel"
 	});
 	const Agregar = (event) => {
 		event.preventDefault();
@@ -25,7 +25,6 @@ export const Create = () => {
 		})
 	}
 
-
 	return (
 		<div className="container">
 			<div className="d-flex justify-content-center">
@@ -35,20 +34,18 @@ export const Create = () => {
 				<div className="mb-3">
 					<label className="form-label">Full Name</label>
 					<input type="text" className="form-control" placeholder="Full Name" onChange={info} name="full_name" required value={data.full_name} />
-					{/* <label htmlFor="inputEmail4" className="form-label">Full Name</label>
-					<input type="text" className="form-control" id="inputFullName" name="full_name" required value={data.full_name} onChange={info} /> */}
 				</div>
 				<div className="mb-3">
 					<label className="form-label">Email</label>
-					<input type="email" className="form-control" placeholder="name@example.com" onChange={info} required value={data.email} />
+					<input type="email" className="form-control" placeholder="name@example.com" onChange={info} name="email" required value={data.email} />
 				</div>
 				<div className="mb-3">
 					<label className="form-label">Phone Number</label>
-					<input type="text" className="form-control" placeholder="Enter Phone" onChange={info} required value={data.phone} />
+					<input type="text" className="form-control" placeholder="Enter Phone" onChange={info} name="phone" required value={data.phone} />
 				</div>
 				<div className="mb-3">
 					<label className="form-label">Address</label>
-					<input type="text" className="form-control" placeholder="Enter Address" onChange={info} required value={data.address} />
+					<input type="text" className="form-control" placeholder="Enter Address" onChange={info} name="address" required value={data.address} />
 				</div>
 				<div className="container">
 					<div className="row">

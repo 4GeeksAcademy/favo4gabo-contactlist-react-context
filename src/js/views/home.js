@@ -1,5 +1,6 @@
 import React, { useEffect, useContext } from "react";
 import { Context } from "../store/appContext";
+import { Link } from "react-router-dom";
 import rigoImage from "../../img/rigo-baby.jpg";
 import "../../styles/home.css";
 import { useActionData } from "react-router";
@@ -7,13 +8,10 @@ import { useActionData } from "react-router";
 export const Home = () => {
 	const { store, actions } = useContext(Context)
 
-	useEffect(() => { actions.getContacts() }, [])
-	console.log(store.contact)
+	useEffect(() => { 
+		actions.getContacts() }, [])
+		console.log(store.contact)
 
-	const contact = []
-
-	// {
-	// 	store.contact.map((index) => {
 	return (
 
 		<div className="container">
@@ -31,7 +29,12 @@ export const Home = () => {
 								<p className="card-text"> <i className="fas fa-phone"></i> {contacto.phone} </p>
 								<p className="card-text"> <i className="fas fa-envelope"></i> {contacto.email} </p>
 							</div>
-							<div className="ms-auto p-2 bd-highlight">Flex item</div>
+							<div className="ms-auto p-2 bd-highlight">
+								<Link to={`/edit/${contacto.id}`}>
+									<button className="btn btn-light" type="button"><i className="fas fa-pen"></i></button>
+								</Link>
+								<button className="btn btn-light" type="button" onClick={() => actions.deleteContact(contacto.id)}><i className="fas fa-trash-alt"></i></button>
+							</div>
 						</div>
 					</div>
 
